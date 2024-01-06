@@ -357,7 +357,7 @@ main {
   width: 200px;
   padding: 3px 12px;
   border-radius: 8px;
-  text-align: center;
+  text-align: left;
 }
 
 .info_more-btn {
