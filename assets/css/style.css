@@ -1,26 +1,6 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
 
-
-/**
- * copyright 2022 @codewithsadee
- */
-
-
-
-
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
 
 :root {
-
-  /**
-   * colors
-   */
-
   /* gradient */
 
   --bg-gradient-onyx: linear-gradient(
@@ -1878,11 +1858,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .social-list { justify-content: center; }
 
-
-
-  /**
-	 * RESUME
-	 */
 
   .timeline-text { max-width: 700px; }
 
