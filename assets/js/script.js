@@ -158,43 +158,35 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
-const firebaseConfig = {
-      apiKey: "AIzaSyDgsnvdsHn5WHKjBTFx8rSwcmMV7fcgzbM",
-      authDomain: "lakshanancontact.firebaseapp.com",
-      projectId: "lakshanancontact",
-      storageBucket: "lakshanancontact.appspot.com",
-      messagingSenderId: "1001923799149",
-      appId: "1:1001923799149:web:2cf21a16a0ae382fdbf764",
-      measurementId: "G-NJYB0R98FX"
-    };
-  
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-  
-    // Initialize Firestore
-    const firestore = firebase.firestore();
-  
-    // Function to handle form submission
-    const submitForm = async (event) => {
-      event.preventDefault();
-  
-      const fullname = document.getElementById('fullname').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-  
-      // Add data to Firestore
-      await firestore.collection('formSubmissions').add({
-        fullname: fullname,
-        email: email,
-        message: message,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      });
-  
-      alert('Form submitted successfully!');
-      // You can redirect or perform other actions after submission if needed
-    };
-  
-    // Attach form submission function to the form
-    form.addEventListener('submit', submitForm);
- 
-  
+// Contact form handling
+const contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Get form data
+  const fullname = this.querySelector('[name="fullname"]').value;
+  const email = this.querySelector('[name="email"]').value;
+  const message = this.querySelector('[name="message"]').value;
+
+  // Get current time as a readable string
+  const now = new Date();
+  const time = now.toLocaleString(); // e.g., "6/7/2024, 10:23:45 AM"
+
+  // Send email using EmailJS
+  emailjs.send(config.EMAILJS_SERVICE_ID, config.EMAILJS_TEMPLATE_ID, {
+    from_name: fullname,
+    from_email: email,
+    message: message,
+    time: time
+  })
+  .then(function(response) {
+    console.log("SUCCESS", response);
+    alert("Message sent successfully!");
+    contactForm.reset();
+  }, function(error) {
+    console.log("FAILED", error);
+    alert("Failed to send message. Please try again.");
+  });
+});
+
