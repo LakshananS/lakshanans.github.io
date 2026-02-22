@@ -33,3 +33,4 @@ jobs:
             .github
             .git
             config.template.js
+            
