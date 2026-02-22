@@ -139,30 +139,165 @@ for (let i = 0; i < formInputs.length; i++) {
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
+const hero = document.querySelector("[data-hero]");
+const main = document.querySelector("main");
 
 // add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
+// Navigation function
+const navigateToPage = function (clickedPage) {
+  const targetPage = clickedPage.replace("#", "").trim().toLowerCase();
+  const isHome = targetPage === "home" || targetPage === "" || targetPage === "lakshanan.";
 
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
-      }
+  const finalTarget = isHome ? "home" : targetPage;
+
+  // Toggle Sidebar visibility
+  if (finalTarget === "resume" || finalTarget === "about" || finalTarget === "portfolio" || finalTarget === "contact") {
+    sidebar.style.display = "none";
+    main.classList.add("full-width");
+  } else {
+    sidebar.style.display = "block";
+    main.classList.remove("full-width");
+  }
+
+  // Toggle Hero and Main
+  if (isHome) {
+    hero.classList.add("active");
+    main.style.display = "none";
+  } else {
+    hero.classList.remove("active");
+    main.style.display = "flex";
+  }
+
+  // Update Pages and Nav Links
+  pages.forEach(page => {
+    if (page.dataset.page === finalTarget) {
+      page.classList.add("active");
+    } else {
+      page.classList.remove("active");
+    }
+  });
+
+  navigationLinks.forEach(link => {
+    const linkText = link.innerHTML.toLowerCase().trim();
+    const linkHref = link.getAttribute("href").replace("#", "").trim().toLowerCase();
+
+    if (linkHref === finalTarget || (isHome && (linkHref === "home" || linkHref === "lakshanan."))) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+
+  window.scrollTo(0, 0);
+};
+
+// Handle initial load and hash change
+window.addEventListener("hashchange", () => {
+  navigateToPage(window.location.hash);
+});
+
+// Initial navigation based on current hash
+window.addEventListener("load", () => {
+  if (window.location.hash) {
+    navigateToPage(window.location.hash);
+  } else {
+    navigateToPage("home");
+  }
+});
+
+// add event to all nav link
+navigationLinks.forEach(link => {
+  link.addEventListener("click", function (e) {
+    // The hash will update automatically due to <a> href="#...", 
+    // and the hashchange listener will trigger navigation.
+    // If the link text is "Lakshanan.", we want it to go to home.
+    const linkText = this.innerHTML.toLowerCase().trim();
+    if (linkText === "lakshanan.") {
+      window.location.hash = "#home";
+    }
+  });
+});
+
+
+// Experience Duration Calculator
+const updateExpDuration = () => {
+  const expElement = document.getElementById("exp-duration");
+  if (expElement) {
+    const startDate = new Date(2025, 2, 1); // March 1, 2025
+    const now = new Date();
+
+    let years = now.getFullYear() - startDate.getFullYear();
+    let months = now.getMonth() - startDate.getMonth();
+
+    if (months < 0) {
+      years--;
+      months += 12;
     }
 
+    let durationStr = "2025 March — Present (";
+    if (years > 0) durationStr += `${years} year${years > 1 ? 's' : ''} `;
+    if (months > 0) durationStr += `${months} month${months > 1 ? 's' : ''}`;
+    if (years === 0 && months === 0) durationStr += "Started this month";
+    durationStr += ")";
+
+    expElement.innerText = durationStr;
+  }
+};
+
+updateExpDuration();
+
+
+// Timeline Scroll Animation
+window.addEventListener("scroll", () => {
+  const timelineItems = document.querySelectorAll(".timeline-item");
+  const triggerBottom = window.innerHeight * 0.8;
+
+  timelineItems.forEach(item => {
+    const itemTop = item.getBoundingClientRect().top;
+    if (itemTop < triggerBottom) {
+      item.classList.add("active-car");
+    } else {
+      item.classList.remove("active-car");
+    }
   });
+});
+
+
+// Initial state
+if (hero.classList.contains("active")) {
+  main.style.display = "none";
+} else {
+  const activePage = Array.from(pages).find(page => page.classList.contains("active"))?.dataset.page;
+  if (activePage === "about" || activePage === "resume" || activePage === "portfolio" || activePage === "contact") {
+    sidebar.style.display = "none";
+    main.classList.add("full-width");
+  }
 }
+
+
+// Header scroll effect
+const header = document.querySelector(".header");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    header.style.padding = "1rem 2rem";
+    header.style.background = "rgba(3, 0, 20, 0.9)";
+  } else {
+    header.style.padding = "1.5rem 2rem";
+    header.style.background = "rgba(3, 0, 20, 0.7)";
+  }
+});
 
 // Contact form handling
 const contactForm = document.getElementById('contact-form');
+const contactBtn = contactForm.querySelector('[data-form-btn]');
 
-contactForm.addEventListener('submit', function(e) {
+contactForm.addEventListener('submit', function (e) {
   e.preventDefault();
+
+  // Change button state
+  const originalBtnText = contactBtn.innerHTML;
+  contactBtn.innerHTML = '<ion-icon name="sync-outline" class="rotate"></ion-icon><span>Sending...</span>';
+  contactBtn.setAttribute("disabled", "");
 
   // Get form data
   const fullname = this.querySelector('[name="fullname"]').value;
@@ -171,22 +306,21 @@ contactForm.addEventListener('submit', function(e) {
 
   // Get current time as a readable string
   const now = new Date();
-  const time = now.toLocaleString(); // e.g., "6/7/2024, 10:23:45 AM"
+  const time = now.toLocaleString();
 
   // Send email using EmailJS
-  emailjs.send(config.EMAILJS_SERVICE_ID, config.EMAILJS_TEMPLATE_ID, {
-    from_name: fullname,
-    from_email: email,
-    message: message,
-    time: time
-  })
-  .then(function(response) {
-    console.log("SUCCESS", response);
-    alert("Message sent successfully!");
-    contactForm.reset();
-  }, function(error) {
-    console.log("FAILED", error);
-    alert("Failed to send message. Please try again.");
-  });
+  emailjs.sendForm(config.EMAILJS_SERVICE_ID, config.EMAILJS_TEMPLATE_ID, this)
+    .then(function (response) {
+      console.log("SUCCESS", response);
+      alert("Message sent successfully!");
+      contactForm.reset();
+      contactBtn.innerHTML = originalBtnText;
+      contactBtn.setAttribute("disabled", "");
+    }, function (error) {
+      console.log("FAILED", error);
+      alert("Failed to send message. Please try again.");
+      contactBtn.innerHTML = originalBtnText;
+      contactBtn.removeAttribute("disabled");
+    });
 });
 

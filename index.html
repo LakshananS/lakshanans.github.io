@@ -23,11 +23,70 @@
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
+
+  <!--
+    - #HEADER
+  -->
+
+  <header class="header">
+    <a href="#home" class="logo" data-nav-link>Lakshanan.</a>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="#home" class="nav-link" data-nav-link>Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#about" class="nav-link active" data-nav-link>About</a>
+        </li>
+        <li class="nav-item">
+          <a href="#resume" class="nav-link" data-nav-link>Resume</a>
+        </li>
+        <li class="nav-item">
+          <a href="#portfolio" class="nav-link" data-nav-link>Portfolio</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#contact" class="nav-link" data-nav-link>Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!--
+    - #HERO
+  -->
+
+  <section class="hero active" id="home" data-hero data-page="home">
+    <div class="page-bg-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <div class="blob blob-4"></div>
+    </div>
+
+    <div class="hero-subtitle reveal-text" style="--delay: 1">Software Developer</div>
+    <h1 class="hero-title">Sivalingam Lakshanan</h1>
+    <p class="hero-text reveal-text" style="--delay: 2">
+      Building modern, high-quality web and mobile experiences with a focus on performance and user experience.
+      Eagerly exploring new challenges in the world of software development.
+    </p>
+    <div class="cta-group">
+      <a href="#contact" class="btn-primary btn-animated" style="--delay: 3">
+        <span>Get In Touch</span>
+      </a>
+      <a href="./assets/images/Sivalingam Lakshanan.pdf" class="btn-primary btn-cv-animated" style="--delay: 4;"
+        download>
+        <span>Download CV</span>
+      </a>
+    </div>
+  </section>
 
   <!--
     - #MAIN
@@ -39,18 +98,19 @@
       - #SIDEBAR
     -->
 
+
     <aside class="sidebar" data-sidebar>
 
       <div class="sidebar-info">
 
-        
-          <img src="./assets/images/lakshan.png" alt="Richard hanrick" width="80" class="avatar-box">
-       
+
+        <img src="./assets/images/lakshan.png" alt="Richard hanrick" width="80" class="avatar-box">
+
 
         <div class="info-content">
-          <h1 class="name" title="Sivalingam Lakshanan">Sivalingam <br/> Lakshanan</h1>
+          <h1 class="name" title="Sivalingam Lakshanan">Sivalingam Lakshanan</h1>
 
-          <p class="title">Software Engineering Undergraduate</p>
+          <p class="title">Software Developer</p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -140,7 +200,7 @@
               <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
-          
+
           <li class="social-item">
             <a href="https://github.com/LakshananS" class="social-link">
               <ion-icon name="logo-github"></ion-icon>
@@ -173,33 +233,7 @@
         - #NAVBAR
       -->
 
-      <nav class="navbar">
 
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-        </ul>
-
-      </nav>
 
 
 
@@ -208,18 +242,55 @@
       <!--
         - #ABOUT
       -->
+      <article class="about active" data-page="about">
+        <div class="page-bg-blobs">
+          <div class="blob blob-1"></div>
+          <div class="blob blob-2"></div>
+          <div class="blob blob-3"></div>
+          <div class="blob blob-4"></div>
+        </div>
 
-      <article class="about  active" data-page="about">
+        <div class="profile-header">
+          <h1 class="profile-name">Sivalingam Lakshanan</h1>
+          <p class="profile-title">Software Developer</p>
+        </div>
 
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
+        <div class="contact-strip">
+          <div class="contact-pill" style="--delay: 1">
+            <ion-icon name="mail-outline"></ion-icon>
+            <a href="mailto:lakshanans1121@gmail.com" class="contact-link">lakshanans1121@gmail.com</a>
+          </div>
 
-        <section class="about-text">
-          <p>
-            Hello, I'm Lakshanan, an aspiring Software Engineering undergraduate student at the Open University of Sri Lanka. With a passion for technology and a commitment to learning, I am dedicated to acquiring the skills and knowledge necessary to thrive in the dynamic field of software engineering. As I navigate my academic journey, I eagerly explore new challenges and opportunities that will shape my future in the world of software development. Join me as I embark on this exciting path, blending theoretical understanding with practical application to build a strong foundation for a successful career in the ever-evolving realm of technology.
+          <div class="contact-pill" style="--delay: 2">
+            <ion-icon name="phone-portrait-outline"></ion-icon>
+            <a href="tel:+94763451121" class="contact-link">+94 76 345 1121</a>
+          </div>
+
+          <div class="contact-pill" style="--delay: 3">
+            <ion-icon name="location-outline"></ion-icon>
+            <address>No 26, VC House, Holbrook, Agarapathana</address>
+          </div>
+        </div>
+
+        <section class="about-text-animated" style="margin-top: 3rem;">
+          <p class="reveal-text" style="--delay: 4">
+            Hello, I'm Lakshanan, a Software Developer with a strong foundation in software engineering and a passion
+            for building efficient, scalable, and user-focused solutions. With hands-on experience in designing,
+            developing, and maintaining applications, I continuously strive to improve my technical expertise and stay
+            current with evolving technologies.
+          </p>
+          <p class="reveal-text" style="--delay: 5">
+            I enjoy solving complex problems, writing clean and maintainable code, and collaborating with teams to
+            deliver
+            high-quality software solutions. My journey in technology is driven by curiosity, continuous learning, and a
+            commitment to excellence.
+          </p>
+          <p class="reveal-text" style="--delay: 6">
+            As I grow in my career, I look forward to taking on new challenges, contributing to impactful projects, and
+            further strengthening my expertise in the ever-evolving world of software development.
           </p>
         </section>
+
 
 
         <!--
@@ -235,8 +306,8 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
-                " alt="design icon" width="40">
+                <ion-icon name="color-palette-outline"
+                  style="font-size: 40px; color: var(--accent-primary);"></ion-icon>
               </div>
 
               <div class="service-content-box">
@@ -252,7 +323,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+                <ion-icon name="code-slash-outline" style="font-size: 40px; color: var(--accent-primary);"></ion-icon>
               </div>
 
               <div class="service-content-box">
@@ -268,7 +339,8 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+                <ion-icon name="phone-portrait-outline"
+                  style="font-size: 40px; color: var(--accent-primary);"></ion-icon>
               </div>
 
               <div class="service-content-box">
@@ -284,7 +356,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
+                <ion-icon name="camera-outline" style="font-size: 40px; color: var(--accent-primary);"></ion-icon>
               </div>
 
               <div class="service-content-box">
@@ -315,63 +387,29 @@
             <li class="testimonials-item">
               <div class="content-card" data-testimonials-item>
 
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Mr.A.K.Kulanthaivel</h4>
+                <h4 class="h4 testimonials-item-title" style="margin-left: 0;" data-testimonials-title>Thilina Yapa
+                  Bandara</h4>
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                   Girama Nilathari/JP,
-                  <br/> Holbrook,
-                  <br/> Agarapathana
-                  <br/> Contact No : +94724971119
+                    Associate Principle Consultant,
+                    <br /> Nagaaro
                   </p>
                 </div>
 
               </div>
             </li>
 
-           
-
             <li class="testimonials-item">
               <div class="content-card" data-testimonials-item>
 
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Mr.M.Jayaraman </h4>
+                <h4 class="h4 testimonials-item-title" style="margin-left: 0;" data-testimonials-title>K.Kalidhasan</h4>
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Former Principal,
-                   <br/> Holbrook,
-                   <br/> Agarapathana
-                   <br/> Contact No : +94714494674
-                   </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Henry william" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Mr.K.Kalidhasan</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                      B.A(Hons), M.A(Geo),Dp in HR
-                     <br/>CP/N/Saumiyamoorthi Thondaman College,
-                     <br/> Dayagama
-                     <br/> Contact No : +94773223137
-                    <br/> Email : Kaalee53@gmail.com
+                    B.A(Hons), M.A(Geo), Dip in HR,
+                    <br /> CP/N/ Holbrook Science College,
+                    <br /> Agarapathana
                   </p>
                 </div>
 
@@ -411,7 +449,7 @@
 
               <div data-modal-text>
                 <p>
-                  
+
                 </p>
               </div>
 
@@ -425,7 +463,7 @@
         <!--
           - clients
         -->
-<!--
+        <!--
         <section class="clients">
 
           <h3 class="h3 clients-title">Clients</h3>
@@ -483,6 +521,12 @@
       -->
 
       <article class="resume" data-page="resume">
+        <div class="page-bg-blobs">
+          <div class="blob blob-1"></div>
+          <div class="blob blob-2"></div>
+          <div class="blob blob-3"></div>
+          <div class="blob blob-4"></div>
+        </div>
 
         <header>
           <h2 class="h2 article-title">Resume</h2>
@@ -544,7 +588,7 @@
 
           <div class="title-wrapper">
             <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+              <ion-icon name="briefcase-outline"></ion-icon>
             </div>
 
             <h3 class="h3">Experience</h3>
@@ -553,241 +597,135 @@
           <ol class="timeline-list">
 
             <li class="timeline-item">
-
               <h4 class="h4 timeline-item-title">Volunteer Maths Teacher</h4>
-
               <span>2018 — 2019</span>
-
               <p class="timeline-text">
                 CP/NE/Glasgow T.V Agaraapthana
               </p>
             </li>
             <li class="timeline-item">
-
               <h4 class="h4 timeline-item-title">Graphic Designer</h4>
-
               <span>2023 — Present</span>
-
               <p class="timeline-text">
                 Self Employed
               </p>
             </li>
-             <li class="timeline-item">
-
+            <li class="timeline-item">
               <h4 class="h4 timeline-item-title"> Full Stack Developer </h4>
-
               <span>2024-April — 2024-December</span>
-
               <p class="timeline-text">
                 TRACE Theory to Trade · Internship
               </p>
             </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Software Developer</h4>
+              <span id="exp-duration">2025 March — Present</span>
+              <p class="timeline-text">
+                ATEAM Software
+              </p>
+            </li>
           </ol>
-
         </section>
-        
-        <section class="timeline">
 
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
 
-            <h3 class="h3">Projects</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title"> GAURDY</h4>
-
-              <span>React Native Mobile Application</span>
-
-              <p class="timeline-text">
-                Guardy is a mobile application for communication between police and civilians.
-                <br/> <a href="https://github.com/TeamDots-Gitup/Gaurdy"> Gaurdy </a>
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">FOODIE</h4>
-
-              <span>Android Studio Mobile Application (Java with firebase) </span>
-
-              <p class="timeline-text">
-                Foodie is a application for expressing restaurant menu deatails
-                  <br/> <a href="https://github.com/LakshananS/FoodieMenu"> Foodie </a>
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Book Store</h4>
-
-              <span>React Js frontend and Laravel Backend</span>
-
-              <p class="timeline-text">
-               
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
 
         <section class="timeline">
 
           <div class="title-wrapper">
             <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+              <ion-icon name="code-working-outline"></ion-icon>
             </div>
 
-            <h3 class="h3">Languages</h3>
+            <h3 class="h3">Languages and Tech Tools</h3>
           </div>
 
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Web Development</h4>
-
-              <span>HTML, CSS, Javascript, React Native, and PHP</span>
-
-              <p class="timeline-text">
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Database Management</h4>
-
-              <span> SQL and Firebase</span>
-
-              <p class="timeline-text">
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Programming Languages</h4>
-
-              <span>Java Script, Java, and Python</span>
-
-              <p class="timeline-text">
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Design Tools</h4>
-
-              <span>Figma, Adope XD, Adobe Illustrator, and Adope Photoshop</span>
-
-              <p class="timeline-text">
-              </p>
-
-            </li>
-
-          </ol>
+          <div class="tech-tools-card content-card">
+            <ul class="tech-tools-list">
+              <li>Java</li>
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>PHP</li>
+              <li>TypeScript</li>
+              <li>Prisma</li>
+              <li>Jest</li>
+              <li>JMeter</li>
+              <li>Docker</li>
+              <li>Laravel</li>
+              <li>.NET C#</li>
+              <li>.NET Entity Framework</li>
+              <li>.NET MAUI</li>
+              <li>Visual Studio</li>
+              <li>Android Studio</li>
+              <li>React Native</li>
+              <li>MongoDB</li>
+              <li>Fast API</li>
+              <li>Swagger</li>
+              <li>Postman</li>
+              <li>WordPress</li>
+            </ul>
+          </div>
 
         </section>
 
         <section class="skill">
 
-          <h3 class="h3 skills-title">My skills</h3>
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="flask-outline"></ion-icon>
+            </div>
 
-          <ul class="skills-list content-card">
+            <h3 class="h3">My Skills</h3>
+          </div>
 
+          <ul class="skills-list">
             <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Web design</h5>
-                <data value="80">80%</data>
+              <div class="animated-skill-pill">
+                <h5 class="h5">UI/UX Designing</h5>
               </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
             </li>
-
             <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Graphic design</h5>
-                <data value="70">70%</data>
+              <div class="animated-skill-pill">
+                <h5 class="h5">Graphic Designing</h5>
               </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
             </li>
-
             <li class="skills-item">
-
-              <div class="title-wrapper">
+              <div class="animated-skill-pill">
+                <h5 class="h5">Coding</h5>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="animated-skill-pill">
                 <h5 class="h5">Branding</h5>
-                <data value="90">90%</data>
               </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
             </li>
-
             <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">WordPress</h5>
-                <data value="50">50%</data>
+              <div class="animated-skill-pill">
+                <h5 class="h5">Teaching</h5>
               </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
-              </div>
-
             </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Mobile App Development</h5>
-                <data value="80">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Database Management System</h5>
-                <data value="75">75%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 75%;"></div>
-              </div>
-
-            </li>
-
           </ul>
 
         </section>
-        
+
+        <section class="skill" style="margin-top: 30px;">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="heart-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Hobbies</h3>
+          </div>
+
+          <ul class="skills-list" style="display: flex; flex-wrap: wrap; gap: 15px;">
+            <li class="animated-skill-pill">
+              <h5 class="h5">Chess</h5>
+            </li>
+            <li class="animated-skill-pill">
+              <h5 class="h5">Farming</h5>
+            </li>
+          </ul>
+        </section>
+
 
 
       </article>
@@ -801,6 +739,12 @@
       -->
 
       <article class="portfolio" data-page="portfolio">
+        <div class="page-bg-blobs">
+          <div class="blob blob-1"></div>
+          <div class="blob blob-2"></div>
+          <div class="blob blob-3"></div>
+          <div class="blob blob-4"></div>
+        </div>
 
         <header>
           <h2 class="h2 article-title">Portfolio</h2>
@@ -809,133 +753,274 @@
         <section class="projects">
 
           <ul class="filter-list">
-
             <li class="filter-item">
               <button class="active" data-filter-btn>All</button>
             </li>
-
             <li class="filter-item">
-              <button data-filter-btn>Web design</button>
+              <button data-filter-btn>Web Applications</button>
             </li>
-
             <li class="filter-item">
-              <button data-filter-btn>Applications</button>
+              <button data-filter-btn>Mobile Applications</button>
             </li>
-
             <li class="filter-item">
-              <button data-filter-btn>Web development</button>
+              <button data-filter-btn>UI Design</button>
             </li>
-
           </ul>
 
           <div class="filter-select-box">
-
             <button class="filter-select" data-select>
-
               <div class="select-value" data-selecct-value>Select category</div>
-
               <div class="select-icon">
                 <ion-icon name="chevron-down"></ion-icon>
               </div>
-
             </button>
 
             <ul class="select-list">
-
               <li class="select-item">
                 <button data-select-item>All</button>
               </li>
-
               <li class="select-item">
-                <button data-select-item>Web design</button>
+                <button data-select-item>Web Applications</button>
               </li>
-
               <li class="select-item">
-                <button data-select-item>Applications</button>
+                <button data-select-item>Mobile Applications</button>
               </li>
-
               <li class="select-item">
-                <button data-select-item>Web development</button>
+                <button data-select-item>UI Design</button>
               </li>
-
             </ul>
-
           </div>
 
           <ul class="project-list">
 
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
+            <!-- UI Design -->
+            <li class="project-item active" data-filter-item data-category="ui design">
+              <div class="portfolio-project-card">
+                <div class="project-head">
+                  <h3 class="project-main-title">Third Hands Project – UI/UX Design</h3>
+                  <div class="project-icon-box"><ion-icon name="color-palette-outline"></ion-icon></div>
+                </div>
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
+                <div class="project-tech-stack">
+                  <span class="tech-pill">Tool: Figma</span>
+                  <span class="tech-pill">Prototype: Interactive</span>
+                </div>
 
-                  <img src="./assets/images/project-11.png" alt="finance" loading="lazy">
-                </figure>
+                <p class="project-description">
+                  Designed high-fidelity UI prototypes focusing on usability and accessibility.
+                </p>
 
-                <h3 class="project-title">Food Menu</h3>
+                <ul class="project-details-list">
+                  <li class="project-details-item">
+                    <ion-icon name="checkmark-done-outline"></ion-icon>
+                    <div>Created interactive wireframes and user flows to demonstrate application navigation and
+                      functionality.</div>
+                  </li>
+                  <li class="project-details-item">
+                    <ion-icon name="checkmark-done-outline"></ion-icon>
+                    <div>Applied modern design principles including typography, color systems, and responsive layout
+                      structures.</div>
+                  </li>
+                  <li class="project-details-item">
+                    <ion-icon name="checkmark-done-outline"></ion-icon>
+                    <div>Designed user-centered interfaces with clear visual hierarchy and intuitive interactions.</div>
+                  </li>
+                  <li class="project-details-item">
+                    <ion-icon name="checkmark-done-outline"></ion-icon>
+                    <div>Conducted iterative design improvements based on usability considerations.</div>
+                  </li>
+                </ul>
 
-                <p class="project-category">Application</p>
-
-              </a>
+                <a href="#" class="project-link">
+                  <ion-icon name="link-outline"></ion-icon>
+                  Third Hands Interactive Prototype
+                </a>
+              </div>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
+            <!-- Mobile Applications -->
+            <li class="project-item active" data-filter-item data-category="mobile applications">
+              <div class="project-separator"></div>
+              <div class="portfolio-project-card">
+                <div class="project-head">
+                  <h3 class="project-main-title">Foodie – Android Application</h3>
+                  <div class="project-icon-box"><ion-icon name="fast-food-outline"></ion-icon></div>
+                </div>
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
+                <div class="project-tech-stack">
+                  <span class="tech-pill">Android Studio</span>
+                  <span class="tech-pill">Java</span>
+                  <span class="tech-pill">XML</span>
+                  <span class="tech-pill">Firebase</span>
+                  <span class="tech-pill">Google Authentication</span>
+                </div>
 
-                  <img src="./assets/images/project-12.png" alt="orizon" loading="lazy">
-                </figure>
+                <p class="project-description">
+                  A food ordering mobile application that allows users to discover nearby restaurants and place orders
+                  for delivery or pickup.
+                </p>
 
-                <h3 class="project-title">Booktopia</h3>
+                <ul class="project-details-list">
+                  <li class="project-details-item">
+                    <ion-icon name="layers-outline"></ion-icon>
+                    <div><strong>Key Features</strong><br>User Authentication, Google Sign-In, Role-based Authorization,
+                      Location-based discovery, Food ordering system, Complaint and suggestion submission, Real-time
+                      database.</div>
+                  </li>
+                  <li class="project-details-item">
+                    <ion-icon name="build-outline"></ion-icon>
+                    <div><strong>Responsibilities</strong><br>Designed and developed Android UI using XML layouts,
+                      Implemented backend integration with Firebase, Managed user sessions, Integrated Google
+                      authentication API, Ensured secure data handling.</div>
+                  </li>
+                </ul>
+              </div>
 
-                <p class="project-category">Application</p>
+              <div class="project-separator"></div>
 
-              </a>
+              <div class="portfolio-project-card">
+                <div class="project-head">
+                  <h3 class="project-main-title">Vision Path – Assistive Mobile Application</h3>
+                  <div class="project-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                </div>
+
+                <div class="project-tech-stack">
+                  <span class="tech-pill">Android Studio</span>
+                  <span class="tech-pill">Kotlin</span>
+                  <span class="tech-pill">XAML</span>
+                  <span class="tech-pill">Gemini 2.5 AI</span>
+                </div>
+
+                <p class="project-description">
+                  An accessibility-focused mobile application designed to assist visually differently-abled individuals
+                  in daily activities.
+                </p>
+
+                <ul class="project-details-list">
+                  <li class="project-details-item">
+                    <ion-icon name="mic-outline"></ion-icon>
+                    <div><strong>Key Features</strong><br>AI-powered object detection, Voice-guided navigation, Fully
+                      voice-controlled interface, AI assistant integration, Step-by-step guidance.</div>
+                  </li>
+                  <li class="project-details-item">
+                    <ion-icon name="scan-outline"></ion-icon>
+                    <div><strong>Responsibilities</strong><br>Designed accessible UI, Integrated Gemini 2.5 AI,
+                      Implemented voice recognition and response, Developed object detection and real-time guidance.
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
+            <!-- Web Applications -->
+            <li class="project-item active" data-filter-item data-category="web applications">
+              <div class="project-separator"></div>
+              <div class="portfolio-project-card">
+                <div class="project-head">
+                  <h3 class="project-main-title">Reservation Management System</h3>
+                  <div class="project-icon-box"><ion-icon name="calendar-outline"></ion-icon></div>
+                </div>
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
+                <div class="project-tech-stack">
+                  <span class="tech-pill">TypeScript</span>
+                  <span class="tech-pill">Next.js</span>
+                  <span class="tech-pill">Prisma</span>
+                  <span class="tech-pill">PostgreSQL</span>
+                  <span class="tech-pill">Docker</span>
+                  <span class="tech-pill">ShadCN UI</span>
+                </div>
 
-                  <img src="./assets/images/project-13.png" alt="fundo" loading="lazy">
-                </figure>
+                <p class="project-description">
+                  A full-stack web-based reservation management platform for searching availability and booking
+                  management.
+                </p>
 
-                <h3 class="project-title">Metro-Manithan</h3>
+                <ul class="project-details-list">
+                  <li class="project-details-item">
+                    <ion-icon name="shield-checkmark-outline"></ion-icon>
+                    <div><strong>Key Features</strong><br>Secure User Auth & Auth, Location searching, Real-time
+                      availability checked with calendar, Booking management system, Admin panel, Docker deployment.
+                    </div>
+                  </li>
+                  <li class="project-details-item">
+                    <ion-icon name="code-slash-outline"></ion-icon>
+                    <div><strong>Responsibilities</strong><br>Developed full-stack app (Next.js), Designed RESTful APIs
+                      (Prisma), Implemented database schema (PostgreSQL), Built responsive UI (ShadCN).</div>
+                  </li>
+                </ul>
+              </div>
 
-                <p class="project-category">Application</p>
+              <div class="project-separator"></div>
 
-              </a>
+              <div class="portfolio-project-card">
+                <div class="project-head">
+                  <h3 class="project-main-title">Digital Logbook System</h3>
+                  <div class="project-icon-box"><ion-icon name="journal-outline"></ion-icon></div>
+                </div>
+
+                <div class="project-tech-stack">
+                  <span class="tech-pill">TypeScript</span>
+                  <span class="tech-pill">Next.js</span>
+                  <span class="tech-pill">Prisma</span>
+                  <span class="tech-pill">PostgreSQL</span>
+                  <span class="tech-pill">Docker</span>
+                  <span class="tech-pill">AWS</span>
+                </div>
+
+                <p class="project-description">
+                  A cloud-based digital logbook system for tracking daily activities with secure recordings and admin
+                  monitoring.
+                </p>
+
+                <ul class="project-details-list">
+                  <li class="project-details-item">
+                    <ion-icon name="cloud-upload-outline"></ion-icon>
+                    <div><strong>Key Features</strong><br>Activity recording, Admin monitoring, AWS cloud deployment,
+                      Secure data storage and role-based access.</div>
+                  </li>
+                  <li class="project-details-item">
+                    <ion-icon name="build-outline"></ion-icon>
+                    <div><strong>Responsibilities</strong><br>Developed scalable backend, Managed AWS deployment,
+                      Implemented secure login, Designed structured database models.</div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="project-separator"></div>
+
+              <div class="portfolio-project-card">
+                <div class="project-head">
+                  <h3 class="project-main-title">Chrono Track – Employee Time Tracking</h3>
+                  <div class="project-icon-box"><ion-icon name="time-outline"></ion-icon></div>
+                </div>
+
+                <div class="project-tech-stack">
+                  <span class="tech-pill">.NET MAUI</span>
+                  <span class="tech-pill">PostgreSQL</span>
+                  <span class="tech-pill">Docker</span>
+                  <span class="tech-pill">Swagger</span>
+                  <span class="tech-pill">Windows & Android</span>
+                </div>
+
+                <p class="project-description">
+                  A cross-platform time tracking application designed for HR management and employee sign-in/out
+                  monitoring.
+                </p>
+
+                <ul class="project-details-list">
+                  <li class="project-details-item">
+                    <ion-icon name="trending-up-outline"></ion-icon>
+                    <div><strong>Key Features</strong><br>Employee tracking, Daily hour monitoring, Real-time
+                      notifications, HR dashboard, API documentation (Swagger), Cross-platform support.</div>
+                  </li>
+                  <li class="project-details-item">
+                    <ion-icon name="build-outline"></ion-icon>
+                    <div><strong>Responsibilities</strong><br>Developed cross-platform app (.NET MAUI), Designed
+                      PostgreSQL schema, Implemented REST APIs, Built HR panel, Containerized services.</div>
+                  </li>
+                </ul>
+              </div>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-14.png" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Travel - Way</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
           </ul>
 
         </section>
@@ -946,82 +1031,7 @@
 
 
 
-      <!--
-        - #BLOG
-      -->
 
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/p1.png" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-11-21">Nov 21, 2021</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Function Oriented Design</h3>
-
-                  <p class="blog-text">
-                    Function Oriented design is a method to software design where the model is decomposed into a set of interacting units or modules where each unit or module has a clearly defined function. Thus, the system is designed from a functional viewpoint.
-                  </p>
-                  
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/p2.png" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-01-21">Jan 21, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Unveiling the Success Story of 99X Empowering Digital Transformation through Innovation</h3>
-
-                  <p class="blog-text">
-                    Welcome to this research report, where we dive into the fascinating journey of 99X, a renowned Sri Lankan software company.
-                 </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
 
 
 
@@ -1032,49 +1042,94 @@
       -->
 
       <article class="contact" data-page="contact">
+        <div class="page-bg-blobs">
+          <div class="blob blob-1"></div>
+          <div class="blob blob-2"></div>
+          <div class="blob blob-3"></div>
+          <div class="blob blob-4"></div>
+        </div>
 
         <header>
           <h2 class="h2 article-title">Contact</h2>
         </header>
 
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2581.3966365901506!2d80.69336109999999!3d6.882916700000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwNTInNTguNSJOIDgwwrA0MSczNi4xIkU!5e1!3m2!1sen!2slk!4v1702311880683!5m2!1sen!2slk"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        
+        <section class="about-text-animated" style="margin-bottom: 3rem;">
+          <p class="reveal-text" style="--delay: 1">
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+            Feel free to reach out through the form below or connect with me via social media.
+          </p>
         </section>
+
+
 
         <section class="contact-form">
 
-          <h3 class="h3 form-title">Contact Form</h3>
+          <h3 class="h3 form-title" style="margin-bottom: 25px; color: var(--accent-primary);">Send a Message</h3>
 
           <form action="#" class="form" data-form id="contact-form">
 
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
               <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
             </div>
 
             <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
 
-            <button class="form-btn" type="submit" data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
+            <button class="btn-primary" type="submit" data-form-btn
+              style="border: none; cursor: pointer; display: flex; align-items: center; gap: 10px; padding: 1rem 2.5rem;">
+              <ion-icon name="paper-plane-outline" style="font-size: 1.5rem;"></ion-icon>
               <span>Send Message</span>
             </button>
 
           </form>
 
         </section>
--
+
       </article>
 
     </div>
 
   </main>
-  
+
+  <!--
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">Lakshanan.</div>
+        <p>Software Developer. Passionate about creating elegant and functional digital solutions.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul class="footer-link-list">
+          <li><a href="#home" class="footer-link">Home</a></li>
+          <li><a href="#about" class="footer-link">About</a></li>
+          <li><a href="#resume" class="footer-link">Resume</a></li>
+          <li><a href="#portfolio" class="footer-link">Portfolio</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Social</h4>
+        <ul class="footer-link-list">
+          <li><a href="https://github.com/LakshananS" class="footer-link">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/sivalingam-lakshanan-75a888283" class="footer-link">LinkedIn</a></li>
+          <li><a href="https://web.facebook.com/kottahena.lakshanan/" class="footer-link">Facebook</a></li>
+          <li><a href="https://www.instagram.com/sivalakshanan1121/" class="footer-link">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Sivalingam Lakshanan. All rights reserved.</p>
+      <p>Designed with ❤️</p>
+    </div>
+  </footer>
+
+
 
 
 
@@ -1091,13 +1146,14 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6985845125744460" crossorigin="anonymous"></script>
-  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6985845125744460"
+    crossorigin="anonymous"></script>
+
   <!-- EmailJS -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript" src="./config.js"></script>
   <script type="text/javascript">
-    (function() {
+    (function () {
       emailjs.init(config.EMAILJS_PUBLIC_KEY);
     })();
   </script>
