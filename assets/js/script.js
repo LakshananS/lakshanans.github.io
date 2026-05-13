@@ -317,8 +317,8 @@ contactForm.addEventListener('submit', function (e) {
       contactBtn.innerHTML = originalBtnText;
       contactBtn.setAttribute("disabled", "");
     }, function (error) {
-      console.log("FAILED", error);
-      alert("Failed to send message. Please try again.");
+      console.error("EmailJS FAILED:", JSON.stringify(error));
+      alert("Failed to send message. Error: " + (error.text || error.status || JSON.stringify(error)));
       contactBtn.innerHTML = originalBtnText;
       contactBtn.removeAttribute("disabled");
     });
