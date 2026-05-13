@@ -37,7 +37,14 @@
   <header class="header">
     <a href="#home" class="logo" data-nav-link>Lakshanan.</a>
 
-    <nav class="nav">
+    <!-- Hamburger Button (mobile/tablet only) -->
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <nav class="nav" id="main-nav">
       <ul class="nav-list">
         <li class="nav-item">
           <a href="#home" class="nav-link" data-nav-link>Home</a>
@@ -51,13 +58,15 @@
         <li class="nav-item">
           <a href="#portfolio" class="nav-link" data-nav-link>Portfolio</a>
         </li>
-
         <li class="nav-item">
           <a href="#contact" class="nav-link" data-nav-link>Contact</a>
         </li>
       </ul>
     </nav>
   </header>
+
+  <!-- Mobile nav overlay (outside header so it doesn't block nav links) -->
+  <div class="nav-overlay" id="nav-overlay"></div>
 
   <!--
     - #HERO
@@ -1125,7 +1134,7 @@
 
     <div class="footer-bottom">
       <p>&copy; 2026 Sivalingam Lakshanan. All rights reserved.</p>
-      <p>Designed with ❤️</p>
+      <p>Designed by Lakshanan</p>
     </div>
   </footer>
 
@@ -1135,20 +1144,6 @@
 
 
 
-
-  <!--
-  <!-- EmailJS -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script type="text/javascript" src="./config.js"></script>
-  <script type="text/javascript">
-    (function () {
-      if (typeof config !== 'undefined') {
-        emailjs.init(config.EMAILJS_PUBLIC_KEY);
-      } else {
-        console.error("Config not found. If this is local, rename config.template.js to config.js. If on GitHub, wait for the Action to finish.");
-      }
-    })();
-  </script>
 
   <!--
     - custom js link
@@ -1162,6 +1157,15 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6985845125744460"
     crossorigin="anonymous"></script>
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript" src="./config.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init(config.EMAILJS_PUBLIC_KEY);
+    })();
+  </script>
 </body>
 
 </html>

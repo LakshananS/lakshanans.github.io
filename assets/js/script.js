@@ -324,3 +324,67 @@ contactForm.addEventListener('submit', function (e) {
     });
 });
 
+// ============================================================
+// HAMBURGER MENU TOGGLE (Mobile / Tablet)
+// ============================================================
+
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mainNav = document.getElementById('main-nav');
+const navOverlay = document.getElementById('nav-overlay');
+
+function openNav() {
+  mainNav.classList.add('open');
+  hamburgerBtn.classList.add('active');
+  hamburgerBtn.setAttribute('aria-expanded', 'true');
+  document.body.classList.add('nav-open');
+}
+
+function closeNav() {
+  mainNav.classList.remove('open');
+  hamburgerBtn.classList.remove('active');
+  hamburgerBtn.setAttribute('aria-expanded', 'false');
+  document.body.classList.remove('nav-open');
+}
+
+function toggleNav() {
+  if (mainNav.classList.contains('open')) {
+    closeNav();
+  } else {
+    openNav();
+  }
+}
+
+if (hamburgerBtn) {
+  hamburgerBtn.addEventListener('click', toggleNav);
+}
+
+// Close nav when overlay (dark backdrop) is clicked
+if (navOverlay) {
+  navOverlay.addEventListener('click', closeNav);
+}
+
+// Mobile nav link click — close menu AND explicitly navigate
+const mobileNavLinks = document.querySelectorAll('.nav-link');
+mobileNavLinks.forEach(link => {
+  link.addEventListener('click', function (e) {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();           // stop default anchor scroll
+      closeNav();                   // close the slide-in panel
+
+      const href = this.getAttribute('href') || '';
+      // Update hash (triggers hashchange → navigateToPage)
+      window.location.hash = href;
+
+      // Also call navigateToPage directly for reliability
+      navigateToPage(href);
+    }
+    // On desktop: let the normal hash navigation work as-is
+  });
+});
+
+// Close nav on window resize if viewport becomes desktop size
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    closeNav();
+  }
+});
