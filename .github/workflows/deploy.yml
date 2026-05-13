@@ -4,12 +4,25 @@ on:
   push:
     branches: [ main ]
 
+# Required permissions for the official Pages deployment actions
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deployment at a time
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
+    # CRITICAL: must match the environment name where your secrets live
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,13 +35,20 @@ jobs:
           echo "    EMAILJS_TEMPLATE_ID: \"${{ secrets.EMAILJS_TEMPLATE_ID }}\"" >> config.js
           echo "};" >> config.js
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Verify config.js was generated
+        run: cat config.js
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # Uploads all files (including generated config.js) as a Pages artifact.
+      # .nojekyll in the repo root tells this action to skip Jekyll,
+      # so config.js is never excluded.
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          branch: gh-pages
-          folder: .
-          clean: true
-          clean-exclude: |
-            .github
-            .git
-            config.template.js
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
